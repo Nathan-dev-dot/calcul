@@ -1,3 +1,3 @@
 public interface PrintInterface {
-    public void print(String message);
+    void print(String message);
 }

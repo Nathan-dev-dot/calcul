@@ -8,21 +8,24 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CalculTest {
     @Test
     public void CalculAdd() {
-        Calcul calcul = new Calcul();
+        PrintInterface printInterface = new Print();
+        Calcul calcul = new Calcul(printInterface);
         List<Integer> numbers = List.of(1, 2, 3);
         assertEquals(6, calcul.add(numbers));
     }
 
     @Test
     public void CalulTime() {
-        Calcul calcul = new Calcul();
+        PrintInterface printInterface = new Print();
+        Calcul calcul = new Calcul(printInterface);
         List<Integer> numbers = List.of(1, 2, 3);
         assertEquals(6, calcul.time(numbers));
     }
 
     @Test
     public void ShouldThrowAnErrorBecauseCalculNotPermited() {
-        Calcul calcul = new Calcul();
+        PrintInterface printInterface = new Print();
+        Calcul calcul = new Calcul(printInterface);
         List<Integer> numbers = List.of(1, 2, 3);
 
         ArithmeticException thrown = assertThrows(

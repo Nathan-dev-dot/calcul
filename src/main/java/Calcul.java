@@ -3,7 +3,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Calcul {
-    Print print = new Print();
+    PrintInterface print;
+
+    public Calcul(PrintInterface print) {
+        this.print = print;
+    }
 
     protected Integer add(List<Integer> numbers) {
         AtomicReference<Integer> total = new AtomicReference<>(0);
